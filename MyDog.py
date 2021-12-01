@@ -1,3 +1,25 @@
+# ❑ Create a class named MyDog and define the following properties.
+# ➢ instance attributes: breed, name, age, color, isAsleep=False
+# ➢ __init__ method that takes breed, name, age, color as parameters, sets the values
+# for them and also sets isAsleep to False
+# ➢ instance methods:
+# ▶ walk() which prints "name is walking!"
+# ▶ eat(food) which prints "name is eating food!"
+# ▶ sleep() which changes the value of the instance attribute, isAsleep to True and
+# prints "name is sleeping!"
+# ▶ wake_up() which changes the value of the instance attribute, isAsleep to False
+# and prints "name is waking up!"
+# ▶ info() which prints out the values for all instance attributes except isAsleep.
+# Create two instances of MyDog class.
+# ➢ On the first instance, invoke method walk and then sleep.
+# ➢ On the second instance, invoke method eat and then sleep.
+# ➢ On the first instance, invoke method wake_up and then eat.
+# ➢ Print out the description of the instances using info method.
+# ❑ Use the MyDog class created from previous problem.
+#
+#
+#
+#
 # class attribute: home_address
 # ➢ class method:
 # ▶ from_birthyear() which returns cls that allows accepting birthyear instead of age
@@ -30,7 +52,7 @@ class MyDog:
         self.isAsleep = False
 
     @staticmethod
-    def from_birthyear( birth_year):
+    def from_birthyear(birth_year):
         current_year = datetime.datetime.now().year
         age = current_year - birth_year
         return age
