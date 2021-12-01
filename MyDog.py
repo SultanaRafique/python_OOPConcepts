@@ -20,7 +20,7 @@ import datetime
 
 
 class MyDog:
-    home_address = ""
+    home_address = "PA"
 
     def __init__(self, bread, name, age, color):
         self.bread = bread
@@ -42,10 +42,7 @@ class MyDog:
 
     @classmethod
     def checkup_needed(cls, age):
-        if (age - 1) % 3 == 0:
-            return True
-        else:
-            return False
+        return (age - 1) % 3 == 0
 
     def walk(self):
         print(f"{self.name} is walking")
@@ -81,3 +78,9 @@ myDog1.info()
 myDog2.info()
 
 print(MyDog.from_birthyear(2011))
+print(myDog1.home_address)
+myDog1.move("CA")
+print(myDog1.home_address)
+print(myDog2.home_address)
+print(myDog1.checkup_needed(10))
+print(myDog1.checkup_needed(12))
