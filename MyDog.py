@@ -1,10 +1,51 @@
-class MyDod:
+# class attribute: home_address
+# ➢ class method:
+# ▶ from_birthyear() which returns cls that allows accepting birthyear instead of age
+# as parameter. (*hint – use datetime module)
+# ▶ move(destination) which changes value of the class attribute, home_address to
+# destination and prints "We moved to destination!!"
+# ➢ static method:
+# ▶ checkup_needed(age) which returns True if the age is x, such that
+# (x - 1) % 3 = 0, False otherwise.
+
+# Print out the description of the instances using info method to make sure the ages
+# are calculated correctly.
+# ➢ On the first instance, print its home_address.
+# ➢ Change the value for home_address using move method.
+# ➢ On the second instance, print its home_address and check if the value has been
+# properly changed.
+# ➢ Check if two instances need checkup using checkup_needed method.
+
+import datetime
+
+
+class MyDog:
+    home_address = ""
+
     def __init__(self, bread, name, age, color):
         self.bread = bread
         self.age = age
         self.name = name
         self.color = color
         self.isAsleep = False
+
+    @staticmethod
+    def from_birthyear( birth_year):
+        current_year = datetime.datetime.now().year
+        age = current_year - birth_year
+        return age
+
+    @classmethod
+    def move(cls, destination):
+        cls.home_address = destination
+        print(f"we moved to {cls.home_address}")
+
+    @classmethod
+    def checkup_needed(cls, age):
+        if (age - 1) % 3 == 0:
+            return True
+        else:
+            return False
 
     def walk(self):
         print(f"{self.name} is walking")
@@ -24,8 +65,8 @@ class MyDod:
         print(f"Bread: {self.bread}, Age: {self.age}, Name: {self.name}, Color: {self.color}")
 
 
-myDog1 = MyDod("aaa", "tiger", "2", "brown")
-myDog2 = MyDod("aaa", "lion", "3", "black")
+myDog1 = MyDog("aaa", "tiger", "2", "brown")
+myDog2 = MyDog("aaa", "lion", "3", "black")
 
 myDog1.walk()
 myDog1.sleep()
@@ -39,7 +80,4 @@ myDog1.eat()
 myDog1.info()
 myDog2.info()
 
-
-
-
-
+print(MyDog.from_birthyear(2011))
