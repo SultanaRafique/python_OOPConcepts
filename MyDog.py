@@ -16,10 +16,6 @@
 # ➢ On the first instance, invoke method wake_up and then eat.
 # ➢ Print out the description of the instances using info method.
 # ❑ Use the MyDog class created from previous problem.
-#
-#
-#
-#
 # class attribute: home_address
 # ➢ class method:
 # ▶ from_birthyear() which returns cls that allows accepting birthyear instead of age
@@ -29,7 +25,6 @@
 # ➢ static method:
 # ▶ checkup_needed(age) which returns True if the age is x, such that
 # (x - 1) % 3 = 0, False otherwise.
-
 # Print out the description of the instances using info method to make sure the ages
 # are calculated correctly.
 # ➢ On the first instance, print its home_address.
